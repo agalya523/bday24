@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎊</title>
+    <link rel="stylesheet" href="main.css">
+    <script>
+        function validate_form() {
+            var valid = true;
+            var name = document.contact_form.contact_name.value.trim();
+            var word = document.contact_form.contact_word.value.trim();
+            var dob = document.contact_form.contact_dob.value;
+
+            if (name === "") {
+                alert("name fill pannu");
+                valid = false;
+            }
+            if (word === "") {
+                alert("word fill pannu");
+                valid = false;
+            }
+            if (dob === "") {
+                alert("dob fill pannu");
+                valid = false;
+            }
+            if (valid) {
+                if (name === "AGALYA") {
+                    if (word === "CHELLAMME" || word === "THANGAMEY") {
+                        if (dob === "2005-09-23") {
+                            confirm("are you sure");
+                            alert("Kandu Pudichita Pola 🙌🏻!!!!");
+                            window.location.href = "about.html";
+                            return false;
+                        } else {
+                            alert("Incorrect date of birth.");
+                            valid = false;
+                        }
+                    } else {
+                        alert("Incorrect word.");
+                        confirm("clue veanuma");
+                        alert("t || c");
+                        valid = false;
+                    }
+                } else {
+                    alert("Incorrect name.");
+                    valid = false;
+                }
+            }
+
+            return valid;
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <center>
+            <div id="formdiv">
+                <form method="post" id="form" name="contact_form" onsubmit="return validate_form();">
+                    <label for="text" class="label"> NAME : *caps</label>
+                    <input type="text" id="text" class="inputget" name="contact_name"> <br>
+                    <label for="text" class="label"> SECRET WORD : *caps</label>
+                    <input type="text" id="text" class="inputget" name="contact_word"> <br>
+                    <label for="date" class="label"> DATE OF BIRTH : </label>
+                    <input type="date" class="inputget" name="contact_dob"> <br>
+                    <input type="submit" value="SUBMIT" class="inputget">
+                    <input type="reset" value="RESET" class="inputget">
+                </form>
+            </div>
+        </center>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+</body>
+
+</html>
